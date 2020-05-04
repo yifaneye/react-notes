@@ -18,19 +18,18 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-	const Hello = () =>
+	const Hello = (props) =>
 			<div className="heading">
-				<h1>Welcome to Sydney</h1>
+				<h1>Welcome to {props.city}</h1>
+				<p>{props.message}</p>
 			</div>
-	const Msg = () => {
-		return (
-				<div className="heading">
-					<h1>Welcome to Sydney</h1>
-				</div>
-		)
-	}
+	const Msg = ({city, message}) =>
+			<div className="heading">
+				<h1>Welcome to {city}</h1>
+				<p>{message}</p>
+			</div>
 	ReactDOM.render(
-			<Msg />,
+			<Msg city="Sydney" message="Enjoy the magical city"/>,
 			document.getElementById("root")
 	);
 </script>
