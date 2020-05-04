@@ -19,13 +19,27 @@
 <div id="root"></div>
 <script type="text/babel">
 	const App = ({name}) => <h1>{name}</h1>
-	const Apps = () => (
-			<div className="heading">
-				<App name="Rectangle" />
-				<App name="Bear" />
-				<App name="Bob" />
-			</div>
-	);
+
+	class Apps extends React.Component {
+		state = {
+			loggedIn: false
+		}
+		logIn = () => this.setState({loggedIn: true})
+		logOut = () => this.setState({loggedIn: false})
+		render() {
+			return (
+					<div className="heading">
+						<button onClick={this.logIn}>Log In</button>
+						<button onClick={this.logOut}>Log Out</button>
+						<i>The user is {this.state.loggedIn ? "logged in" : "not logged in"}</i>
+						<App name="Rectangle"/>
+						<App name="Bear"/>
+						<App name="Aware"/>
+					</div>
+			)
+		}
+	}
+
 	ReactDOM.render(
 			<Apps />,
 			document.getElementById("root")
