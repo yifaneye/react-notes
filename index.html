@@ -18,9 +18,19 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-	let city = "Sydney";
+	const Hello = () =>
+			<div className="heading">
+				<h1>Welcome to Sydney</h1>
+			</div>
+	const Msg = () => {
+		return (
+				<div className="heading">
+					<h1>Welcome to Sydney</h1>
+				</div>
+		)
+	}
 	ReactDOM.render(
-			<h1 className="heading">Hello {city}</h1>,
+			<Msg />,
 			document.getElementById("root")
 	);
 </script>
