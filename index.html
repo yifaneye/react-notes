@@ -8,20 +8,19 @@
 	<title>Document</title>
 	<script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
 	<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<style>
+		.heading {
+			color: purple;
+		}
+	</style>
 </head>
 <body>
 <div id="root"></div>
-<script>
+<script type="text/babel">
+	let city = "Sydney";
 	ReactDOM.render(
-			React.createElement(
-					"h1",
-					{"style": {"color": "red"}},
-					React.createElement(
-							"h1",
-							null,
-							"Hello again"
-					)
-			),
+			<h1 className="heading">Hello {city}</h1>,
 			document.getElementById("root")
 	);
 </script>
