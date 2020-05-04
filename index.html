@@ -18,20 +18,24 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-	const App = ({name}) => <h1>{name}</h1>;
-	const Ios = ({name}) => <h1>{name}</h1>;
+	const appList = [
+			"Rectangle",
+			"Bear",
+			"Aware"
+	];
+	//const App = ({name}) => <h1>{name}</h1>;
+	//const Ios = ({name}) => <h1>{name}</h1>;
 
-	const Apps = ({desktop}) => (
-			<div className="heading">
-				{desktop
-						? <App name="Rectangle"/>
-						: <Ios name="Timing"/>
-				}
-			</div>
+	const Apps = ({apps}) => (
+		<ul>
+			{apps.map((app, i) =>
+				<li key={i}>{app}</li>
+			)}
+		</ul>
 	);
 
 	ReactDOM.render(
-			<Apps mobile={false}/>,
+			<Apps apps={appList}/>,
 			document.getElementById("root")
 	);
 </script>
