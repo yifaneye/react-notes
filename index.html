@@ -18,18 +18,16 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-	const Hello = (props) =>
+	const App = ({name}) => <h1>{name}</h1>
+	const Apps = () => (
 			<div className="heading">
-				<h1>Welcome to {props.city}</h1>
-				<p>{props.message}</p>
+				<App name="Rectangle" />
+				<App name="Bear" />
+				<App name="Bob" />
 			</div>
-	const Msg = ({city, message}) =>
-			<div className="heading">
-				<h1>Welcome to {city}</h1>
-				<p>{message}</p>
-			</div>
+	);
 	ReactDOM.render(
-			<Msg city="Sydney" message="Enjoy the magical city"/>,
+			<Apps />,
 			document.getElementById("root")
 	);
 </script>
